@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gordon B. Hinckley</title>
+
+    <style>
+        html {
+            /* Setting a base font size of 10px give us easier rem calculations
+                Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
+            */
+            font-size: 10px;
+        }
+
+        body {
+            /* Native font stack https://getbootstrap.com/docs/4.2/content/reboot/#native-font-stack */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+                'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.5;
+            text-align: center;
+            color: #333;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 460px) {
+            h1 {
+                font-size: 3.5rem;
+                line-height: 1.2;
+            }
+        }
+
+        h2 {
+            font-size: 2.25rem;
+        }
+
+        #main {
+            margin: 30px 8px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #eee;
+        }
+
+        @media (max-width: 460px) {
+            #main {
+                margin: 0;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        #img-div {
+            background: white;
+            padding: 10px;
+            margin: 0;
+        }
+
+        #img-caption {
+            margin: 15px 0 5px 0;
+        }
+
+        @media (max-width: 460px) {
+            #img-caption {
+                font-size: 1.4rem;
+            }
+        }
+
+        #headline {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        ul {
+            max-width: 550px;
+            margin: 0 auto 50px auto;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        li {
+            margin: 16px 0;
+        }
+
+        blockquote {
+            font-style: italic;
+            max-width: 545px;
+            margin: 0 auto 50px auto;
+            text-align: left;
+        }
+    </style>
+
+    <!-- 
+        *
+        *   Scripting Here
+        *
+        -->
+    <script>
+        // eslint-disable-next-line no-unused-vars
+        const projectName = 'tribute-page';
+    </script>
+
+</head>
+
+
+<body>
+    <main id="main">
+        <h1 id="title">Gordon Bitner Hinckley</h1>
+        <p>A prophet's prophet</p>
+        <figure id="img-div">
+            <img id="image"
+                src="https://assets.ldscdn.org/0f/e1/0fe1b1add4f8bcae32fac8e492cabc842e8e60a6/lds_president_gordon_b_hinckley.jpeg"
+                alt="Gordon B. Hinckley official portrait">
+            <figcaption id="img-caption">President Gordon B. Hinckley, official portrait</figcaption>
+        </figure>
+        <section id="tribute-info">
+            <h2 id="headline">President Hinckley moved the Church forward in many ways:</h2>
+            <ul>
+                <li>He built the Conference Center because the Tabernacle on
+                    Temple Square wouldn't hold all who wanted to attend General Conference.</li>
+                <li>He designed small, less expensive temples and built many of them.</li>
+                <li>He reached out to the media and public in an unprecedented way
+                    and made the Church leadership more transparent.</li>
+
+            </ul>
+            <a id="tribute-link"
+                href="https://www.churchofjesuschrist.org/study/manual/teachings-of-presidents-of-the-church-gordon-b-hinckley/the-life-and-ministry-of-gordon-b-hinckley?lang=eng"
+                alt="More info" target="_blank">
+                Read more about Gordon B. Hinckley's life and ministry.
+            </a>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js."></script>
+</body>
+
+</html>
