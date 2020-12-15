@@ -1,5 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fredoka+One&family=Alfa+Slab+One&display=swap');
 
+
+:root {
+    color: #5b352d;
+    background-color: #ffd200;
+}
+
+header p {
+    font-family: 'Alfa Slab One';
+    font-size: large;
+}
+
+
+body {
+    font-family: 'Calibri';
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+h1 {
+    font-family: 'Alfa Slab One';
+    font-size: 30pt;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.mm-logo img {
+    max-height: 70px;
+    max-width: 162px;
+}
 
 .left-margin {
-    margin-left: 40px;
+    margin-left: 80px;
+}
+
+/* Color Complements */
+.blue {
+    color: #2b2bad
+}
+
+.purple {
+    color: #a600ff;
+}
+
+.green {
+    color: #2d5b4d;
+}
+
+.light-brown {
+    color: #ad6c2b
+}
+
+.violet {
+    color: #d27eff
+}
+
+.mint {
+    color: #00ffb3
 }
