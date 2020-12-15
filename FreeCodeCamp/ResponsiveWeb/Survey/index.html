@@ -5,20 +5,78 @@
 
         <title>Survey</title>
 
-        <style>
 
+        <link rel='stylesheet' type='text/css' href='./global.css'>
+        <link rel='stylesheet' type='text/css' href='./index.css'>
+
+        <style>
         </style>
 
 
         <script>
             // eslint-disable-next-line no-unused-vars
             const projectName = 'survey-form';
+
+            function handleSubmit(event) {
+                //event.preventDefault();
+
+            }
         </script>
 
     </head>
 
 
     <body>
+        <header class='left-margin'>
+            <h1 id='title'>M&Ms Survey</h1>
+            <p id='description'>Inquiring about your tastes in M&Ms candy</p>
+        </header>
+
+        <main>
+            <ol class='left-margin'>
+                <li>Milk Chocolate (Plain)</li>
+                <li>Peanut</li>
+                <li>Peanut Butter</li>
+                <li>Pretzel</li>
+                <li>Caramel</li>
+                <li>Crispy</li>
+                <li>Almond</li>
+                <li>Dark Chocolate</li>
+                <li>Coffee Nut</li>
+                <li>Mint Dark Chocolate</li>
+                <li>Sweet and Salty Milk Chocolate</li>
+                <li>Sweet and Salty Peanut</li>
+                <li>White Chocolate Peanut</li>
+                <li>English Toffee Peanut</li>
+                <li>Fudge Brownie</li>
+                <li>Chocolate Popcorn</li>
+                <li>Sugar Cookie</li>
+                <li>Creepy Cocoa Crisp</li>
+                <li>Orange Vanilla Cream</li>
+                <li>White Cheesecake</li>
+                <li>White Pumpkin Pie</li>
+                <li>White Candy Corn</li>
+                <li>Hazelnut Spread</li>
+            </ol>
+            <form id='survey-form' class='left-margin' onsubmit='handleSubmit(event)'
+                    action='./thanks.html'>
+                <label id='name-label' for='name'>Name: </label>
+                <input type='text' id='name' placeholder='Enter your name' required/>
+                <br>
+                <label id='email-label' for='email'>Email:</label>
+                <input type='email' id='email' placeholder='Email address' required/>
+                <br>
+                <label id='number-label' for='number'>Number in household:</label>
+                <input type='number' id='number' min='1' max='20' placeholder='People in household' required/>
+                <br>
+                <button type='submit' id='submit'>Submit</button>
+            </form>
+
+        </main>
+
+        <footer>
+
+        </footer>
 
         <!-- freecodecamp.com testing bundle -->
         <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
