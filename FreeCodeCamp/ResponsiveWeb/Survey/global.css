@@ -31,6 +31,10 @@ h1 {
     max-width: 162px;
 }
 
+.mm-character img {
+    max-height: 144px;
+}
+
 .left-margin {
     margin-left: 80px;
 }
