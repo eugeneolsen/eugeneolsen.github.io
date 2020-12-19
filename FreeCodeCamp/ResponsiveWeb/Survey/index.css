@@ -1,3 +1,5 @@
+@import 'global.css';
+
 textarea {
     width: 500px;
 }
