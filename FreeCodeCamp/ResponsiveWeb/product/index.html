@@ -2,13 +2,33 @@
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <title>Serenity Signs</title>
 
         <style>
             .nav-link {
                 margin-left: 20px;
                 margin-right: 20px;
+            }
+
+            .header {
+                display: flex;
+            }
+
+            .signs {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .sign {
+                height: 100px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            form {
+                margin-top: 20px;
             }
 
         </style>
@@ -23,7 +43,7 @@
 
 
     <body style="margin-left: 40px; margin-top: 10px; background-color:rgb(247, 242, 216);">
-        <header id="header" style="display: flex">
+        <header id="header" class="header">
             <img id="header-img" src="https://cdn-olsen-web.s3-us-west-1.amazonaws.com/images/serenity-sign.png" width="180" height="79" alt="Serenity cursive"/> 
             <span style="padding-left: 10px; padding-top: 6px; font-size: 36pt;">Signs&#8480;</span>
             <nav id="nav-bar" style="height: 30px; background-color: rgb(245, 235, 186); padding: 5px; margin-left: 60px">
@@ -36,6 +56,12 @@
         <main>
             <h1>"What's <em>Your</em> Serenity Sign?"</h1>
             <!-- TODO: Display serenity symbols here -->
+            <div id="signs" class="signs">
+                <img class="sign" src="./celtic-serenity.png" >
+                <img class="sign" src="./AA-service.png" >
+                <img class="sign" src="./chinese-serenity.png" >
+                <img class="sign" src="./om.png" >
+            </div>
             <form id="form" action="https://www.freecodecamp.com/email-submit">
                 <input type="email" id="email" name="email" placeholder="Enter your email address" required/>
                 <input type="submit" id="submit" />
