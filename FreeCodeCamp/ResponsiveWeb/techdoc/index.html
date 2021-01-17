@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Technical Documentation</title>
+
+        <style>
+            html,
+            body {
+                min-width: 290px;
+                color: #4d4e53;
+                background-color: #fcf9e8;
+                font-family: 'Open Sans', Arial, sans-serif;
+                line-height: 1.5;
+            }
+
+            #navbar {
+                position: fixed;
+                min-width: 290px;
+                top: 0px;
+                left: 0px;
+                width: 300px;
+                height: 100%;
+                border-right: solid;
+                border-color: rgba(0, 22, 22, 0.4);
+                background-color: #fff1cb;
+            }
+        
+            header {
+                color: black;
+                margin: 10px;
+                text-align: center;
+                font-size: 1.8em;
+                font-weight: thin;
+            }
+        
+            #main-doc header {
+                text-align: left;
+                margin: 40px 0px 0px;
+            }
+
+            #main-doc h1 {
+                margin-top: 0px;
+            }
+
+            #main-doc h2 {
+                margin-left: 75px;
+                margin-top: -30px;
+                margin-bottom: 20px;
+            }
+
+            #byline {
+                margin-left: 100px;
+                margin-bottom: 40px;
+            }
+        
+            #navbar header {
+                margin-top: 30px;
+            }
+        
+            #navbar ul {
+                height: 88%;
+                padding: 0;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        
+            #navbar li {
+                color: #4d4e53;
+                border-top: 1px solid;
+                list-style: none;
+                position: relative;
+                width: 100%;
+            }
+        
+            #navbar a {
+                display: block;
+                padding: 10px 30px;
+                color: #4d4e53;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        
+            #main-doc {
+                position: absolute;
+                margin-left: 310px;
+                padding: 20px;
+                margin-bottom: 110px;
+            }
+        
+            section article {
+                color: #4d4e53;
+                margin: 15px;
+                font-size: 0.96em;
+            }
+        
+            section li {
+                margin: 15px 0px 0px 20px;
+            }
+        
+            code {
+                display: block;
+                text-align: left;
+                white-space: pre-line;
+                position: relative;
+                word-break: normal;
+                word-wrap: normal;
+                line-height: 2;
+                background-color: #f7f7f7;
+                padding: 15px;
+                margin: 10px;
+                border-radius: 5px;
+            }
+        
+            @media only screen and (max-width: 815px) {
+        
+                /* For mobile phones: */
+                #navbar ul {
+                    border: 1px solid;
+                    height: 207px;
+                }
+        
+                #navbar {
+                    background-color: white;
+                    position: absolute;
+                    top: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                    max-height: 275px;
+                    border: none;
+                    z-index: 1;
+                    border-bottom: 2px solid;
+                }
+        
+                #main-doc {
+                    position: relative;
+                    margin-left: 0px;
+                    margin-top: 270px;
+                }
+            }
+        
+            @media only screen and (max-width: 400px) {
+                #main-doc {
+                    margin-left: -10px;
+                }
+        
+                code {
+                    margin-left: -20px;
+                    width: 100%;
+                    padding: 15px;
+                    padding-left: 10px;
+                    padding-right: 45px;
+                    min-width: 233px;
+                }
+            }
+        
+            .comment {
+                color: darkgreen;
+            }
+        </style>
+
+
+        <script>
+            // eslint-disable-next-line no-unused-vars
+            const projectName = 'technical-docs-page';
+        </script>
+
+    </head>
+
+
+    <body>
+        <nav id="navbar">
+            <header>SMS with AWS</header>
+            <ul>
+                <li><a class="nav-link" href="#introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#already-know">What You Should Already Know</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li><a class="nav-Link" href="#sns">Amazon SNS</a></li>
+                <li><a class="nav-Link" href="#pinpoint">Amazon Pinpoint</a></li>
+            </ul>    
+        </nav>
+        <main id="main-doc">
+            <h1>SMS with Amazon Web Services</h1>
+            <h2>using JavaScript and Node.js</h2>
+            
+            <div id="byline">by Eugene C. Olsen &nbsp; 16 January 2021</div>
+            <section class="main-section" id="introduction">
+                <header>Introduction</header>
+                <article>Every week I get Short Message Service (SMS) messages (you know, text messages) 
+                    on my phone from my banks, my brokerage firm, my cellular provider, my health insurer, and other big companies.
+                    Ever wonder how they do it?  Amazon provides two Web services that will do the same thing:
+                    <strong>Amazon Simple Notification Service (SNS)</strong> and <strong>Amazon Pinpoint</strong>.
+                    If your business has at least one use case that would benefit by sending SMS messages to
+                    customer phones, you've come to the right place.  Read on!
+                </article>
+            </section>
+            <section class="main-section" id="already-know">
+                <header>What You Should Already Know</header>
+                <article>
+                    <ol>
+                        <li>You should have an Amazon Web Services (AWS) account and be familiar with using the AWS console.
+                            Command line skills would be a plus.
+                            If you do not have an AWS account, Amazon will be happy to have you sign up
+                            for free and give you all sorts of great services free for 12 months.
+                            <a href="https://aws.amazon.com/free" target="_blank">Sign up for a free Amazon Web Services account.</a>
+                        </li>
+                        <li>You should be familiar with JavaScript. The AWS services speak other languages as well,
+                            but this documentation is written for JavaScript.
+                        </li>
+                        <li>Likewise, you should be familiar with Node.js.</li>
+                    </ol>
+                </article>
+            </section>
+            <section class="main-section" id="pricing">
+                <header>Pricing</header>
+                <article>
+                    There are two classes of SMS messages for both SNS and Pinpoint: Transactional and Promotional.
+                </article>
+                <code>
+                    <span class="comment">// JavaScript Code</span><br/>
+                    let i = 0;<br/>
+                </code>
+            </section>
+            <section class="main-section" id="sns">
+                <header>Amazon Simple Notification Service (SNS)</header>
+                <p>Lorem ipsum</p>
+                <p>Dolor sit amet consectetuer</p>
+                <code>
+                    <span class="comment">// JavaScript Code</span><br/>
+                    let i = 0;<br/>
+                </code>
+            </section>
+            <section class="main-section" id="pinpoint">
+                <header>Amazon Pinpoint</header>
+                <p>Lorem ipsum</p>
+                <p>Dolor sit amet consectetuer</p>
+                <code>
+                    <span class="comment">// JavaScript Code</span><br/>
+                    let i = 0;<br/>
+                </code>
+            </section>
+        </main>
+        <!-- freecodecamp.com testing bundle -->
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
