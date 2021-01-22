@@ -175,11 +175,11 @@
         <nav id="navbar">
             <header>SMS with AWS</header>
             <ul>
-                <li><a class="nav-link" href="#introduction">Introduction</a></li>
-                <li><a class="nav-link" href="#already-know">What You Should Already Know</a></li>
-                <li><a class="nav-link" href="#pricing">Pricing</a></li>
-                <li><a class="nav-Link" href="#sns">Amazon SNS</a></li>
-                <li><a class="nav-Link" href="#pinpoint">Amazon Pinpoint</a></li>
+                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#Prior_Knowledge">Prior Knowledge</a></li>
+                <li><a class="nav-link" href="#Pricing">Pricing</a></li>
+                <li><a class="nav-link" href="#Simple_Notification_Service">Simple Notification Service</a></li>
+                <li><a class="nav-link" href="#Pinpoint">Pinpoint</a></li>
             </ul>    
         </nav>
         <main id="main-doc">
@@ -187,7 +187,7 @@
             <h2>using JavaScript and Node.js</h2>
             
             <div id="byline">by Eugene C. Olsen &nbsp; 16 January 2021</div>
-            <section class="main-section" id="introduction">
+            <section class="main-section" id="Introduction">
                 <header>Introduction</header>
                 <article>Every week I get Short Message Service (SMS) messages (you know, text messages) 
                     on my phone from my banks, my brokerage firm, my cellular provider, my health insurer, and other big companies.
@@ -197,8 +197,8 @@
                     customer phones, you've come to the right place.  Read on!
                 </article>
             </section>
-            <section class="main-section" id="already-know">
-                <header>What You Should Already Know</header>
+            <section class="main-section" id="Prior_Knowledge">
+                <header>Prior Knowledge</header>
                 <article>
                     <ol>
                         <li>You should have an Amazon Web Services (AWS) account and be familiar with using the AWS console.
@@ -214,31 +214,48 @@
                     </ol>
                 </article>
             </section>
-            <section class="main-section" id="pricing">
+            <section class="main-section" id="Pricing">
                 <header>Pricing</header>
                 <article>
-                    There are two classes of SMS messages for both SNS and Pinpoint: Transactional and Promotional.
+                    <p>There are two classes of SMS messages for both SNS and Pinpoint: Transactional and Promotional.
+                        One part of the documentation says that Promotional pricing is less than Transactional pricing
+                        but the pricing tables show the same rates for both. This may change in the future.
+                    </p>
+                    <p>In the United States, both Transactional and Promotional SMS messages 
+                        cost $0.00645 using the Simple Notification Service (SNS).  Inbound 
+                        messages for SNS cost $0.0075.  The Amazon Pinpoint service charges
+                        an additional $1.20 per 1000 endpoints per month.
+                    </p>
                 </article>
-                <code>
-                    <span class="comment">// JavaScript Code</span><br/>
-                    let i = 0;<br/>
-                </code>
             </section>
-            <section class="main-section" id="sns">
-                <header>Amazon Simple Notification Service (SNS)</header>
+            <section class="main-section" id="Simple_Notification_Service">
+                <header>Simple Notification Service</header>
                 <p>Lorem ipsum</p>
                 <p>Dolor sit amet consectetuer</p>
                 <code>
-                    <span class="comment">// JavaScript Code</span><br/>
+                    <span class="comment">// SMS Message to single endpoint</span><br/>
                     let i = 0;<br/>
                 </code>
+                <code>
+                    <span class="comment">// Create Topic</span><br/>
+                    let i = 0;<br/>
+                </code>
+                <code>
+                    <span class="comment">// Subscribe to Topic</span><br/>
+                    let i = 0;<br/>
+                </code>
+                <code>
+                    <span class="comment">// Publish Topic</span><br/>
+                    let i = 0;<br/>
+                </code>
+                <p>For more information, see: <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/sns-examples.html" target="_blank">AWS SDK for Javascript: SNS Examples</a></p>
             </section>
-            <section class="main-section" id="pinpoint">
-                <header>Amazon Pinpoint</header>
+            <section class="main-section" id="Pinpoint">
+                <header>Pinpoint</header>
                 <p>Lorem ipsum</p>
                 <p>Dolor sit amet consectetuer</p>
                 <code>
-                    <span class="comment">// JavaScript Code</span><br/>
+                    <span class="comment">// SendMessage</span><br/>
                     let i = 0;<br/>
                 </code>
             </section>
