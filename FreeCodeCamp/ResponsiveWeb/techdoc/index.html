@@ -247,12 +247,47 @@
             </section>
             <section class="main-section" id="Simple_Notification_Service">
                 <header>Simple Notification Service</header>
-                <p>Lorem ipsum</p>
-                <p>Dolor sit amet consectetuer</p>
+                <p>There are two ways to send SMS messages using the Simple Notification Service:
+                    <ul>
+                        <li>Directly</li>
+                        <li>Using a Topic</li>
+                    </ul>
+                    The direct method sends one message per API call. Using a Topic, you may send
+                    many SMS messages with one API call that "publishes" the Topic.  In fact, several different types of messages
+                    can be send with one publish API call.   One publish call can send SMS messages, email messages, and more.
+                    On this page, we will deal only with SMS messages.
+                </p>
+                <p>The code below demonstrates how to subscribe an SMS endpoint (a phone number) to an SNS Topic.</p>
                 <code>
-                    <span class="comment">// SMS Message to single endpoint</span><br/>
-                    let i = 0;<br/>
+                <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+<span style="color: #008000">// Load the AWS SDK for Node.js</span>
+<span style="color: #0000ff">const</span> AWS = require(<span style="color: #a31515">&#39;aws-sdk&#39;</span>);
+<span style="color: #008000">// Set region</span>
+AWS.config.update({region: <span style="color: #a31515">&#39;us-east-1&#39;</span>});
+
+<span style="color: #008000">// Create subscribe/SMS parameters</span>
+<span style="color: #0000ff">let</span> params = {
+    Protocol: <span style="color: #a31515">&#39;sms&#39;</span>, <span style="color: #008000">/* required */</span>
+    TopicArn: <span style="color: #a31515">&#39;arn:aws:sns:us-east-1:111122223333:HelloWorld&#39;</span>, <span style="color: #008000">/* required */</span>
+    Endpoint: <span style="color: #a31515">&#39;+12015554321&#39;</span>
+};
+
+<span style="color: #008000">// Create promise and SNS service object</span>
+<span style="color: #0000ff">let</span> subscribePromise = <span style="color: #0000ff">new</span> AWS.SNS({apiVersion: <span style="color: #a31515">&#39;latest&#39;</span>}).subscribe(params).promise();
+
+<span style="color: #008000">// Handle promise&#39;s fulfilled/rejected states</span>
+subscribePromise.then(
+    <span style="color: #0000ff">function</span>(data) {
+    console.log(<span style="color: #a31515">&quot;Success!  Subscription ARN is &quot;</span> + data.SubscriptionArn);
+    }).<span style="color: #0000ff">catch</span>(
+    <span style="color: #0000ff">function</span>(err) {
+    console.error(err, err.stack);
+    });
+                    </pre></div>
                 </code>
+                <p><strong>Note</strong> that it is best not to include the actual Topic ARN in your code.
+                    Rather, it is better to put the Topic ARN in your environment variables.
+                </p>
                 <code>
                     <span class="comment">// Create Topic</span><br/>
                     let i = 0;<br/>
