@@ -11,7 +11,7 @@
             body {
                 min-width: 290px;
                 color: #4d4e53;
-                background-color: #fcf9e8;
+                background-color: whitesmoke; /*#fcf9e8;*/
                 font-family: 'Open Sans', Arial, sans-serif;
                 line-height: 1.5;
             }
@@ -25,7 +25,8 @@
                 height: 100%;
                 border-right: solid;
                 border-color: rgba(0, 22, 22, 0.4);
-                background-color: #fff1cb;
+                background-color: #232f3e;
+                color: lightgray;
             }
         
             header {
@@ -58,6 +59,7 @@
         
             #navbar header {
                 margin-top: 30px;
+                color: lightgray;
             }
         
             #navbar ul {
@@ -68,7 +70,7 @@
             }
         
             #navbar li {
-                color: #4d4e53;
+                color: darkgray;
                 border-top: 1px solid;
                 list-style: none;
                 position: relative;
@@ -78,9 +80,14 @@
             #navbar a {
                 display: block;
                 padding: 10px 30px;
-                color: #4d4e53;
+                color: lightgray;
                 text-decoration: none;
                 cursor: pointer;
+            }
+
+            #navbar a:hover {
+                color: white;
+                font-weight: bold;
             }
         
             #main-doc {
@@ -195,6 +202,15 @@
                     <strong>Amazon Simple Notification Service (SNS)</strong> and <strong>Amazon Pinpoint</strong>.
                     If your business has at least one use case that would benefit by sending SMS messages to
                     customer phones, you've come to the right place.  Read on!
+                    <p>
+                        In both the SNS and Pinpoint services, there are two classes of SMS messages:
+                        <ul>
+                            <li>Transactional</li>
+                            <li>Promotional</li>
+                        </ul>
+                        The Transactional messages are delivered more promptly and more reliably than are Promotional messages.
+                        In theory, Transactional messages cost more (see <a href="#Pricing">Pricing</a>, below).
+                    </p>
                 </article>
             </section>
             <section class="main-section" id="Prior_Knowledge">
@@ -211,13 +227,14 @@
                             but this documentation is written for JavaScript.
                         </li>
                         <li>Likewise, you should be familiar with Node.js.</li>
+                        <li>Familiarity and experience with the AWS SDK for JavaScript and Node.js is an advantage but not required.</li>
                     </ol>
                 </article>
             </section>
             <section class="main-section" id="Pricing">
                 <header>Pricing</header>
                 <article>
-                    <p>There are two classes of SMS messages for both SNS and Pinpoint: Transactional and Promotional.
+                    <p>As mentioned in the introduction, there are two classes of SMS messages for both SNS and Pinpoint: Transactional and Promotional.
                         One part of the documentation says that Promotional pricing is less than Transactional pricing
                         but the pricing tables show the same rates for both. This may change in the future.
                     </p>
@@ -249,6 +266,7 @@
                     let i = 0;<br/>
                 </code>
                 <p>For more information, see: <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/sns-examples.html" target="_blank">AWS SDK for Javascript: SNS Examples</a></p>
+                <p>For complete code examples, see: <a href="https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-javascript-example_code-sns.html" target="_blank">More code examples</a></p>
             </section>
             <section class="main-section" id="Pinpoint">
                 <header>Pinpoint</header>
@@ -258,6 +276,7 @@
                     <span class="comment">// SendMessage</span><br/>
                     let i = 0;<br/>
                 </code>
+                <p>For a complete code example, see: <a href="https://docs.aws.amazon.com/code-samples/latest/catalog/javascript-pinpoint-pinpoint_send_sms_message_api.js.html"  target="_blank">AWS Pinpoint SMS code example</a></p>
             </section>
         </main>
         <!-- freecodecamp.com testing bundle -->
