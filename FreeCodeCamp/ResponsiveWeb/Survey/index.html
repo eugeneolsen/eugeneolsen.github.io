@@ -9,6 +9,9 @@
         <link rel='stylesheet' type='text/css' href='./index.css'>
 
         <style>
+            .right-column {
+                padding-left: 40px;
+            }
         </style>
 
 
@@ -61,31 +64,49 @@
                 </select>
                 <br>
                 <p>Which is your favorite regular M&Ms flavor?</p>
-                <label for='plain'><input id='plain' value='plain' type='radio' name='standard'>Milk Chocolate (Plain)</label> <br>
-                <label for='peanut'><input id='peanut' value='peanut' type='radio' name='standard'>Peanut</label> <br>
-                <label for='peanutbutter'><input id='peanutbutter' value='peanutbutter' type='radio' name='standard'>Peanut Butter</label> <br>
-                <label for='pretzel'><input id='pretzel' value='pretzel' type='radio' name='standard'>Pretzel</label> <br>
-                <label for='caramel'><input id='caramel' value='caramel' type='radio' name='standard'>Caramel</label> <br>
-                <label for='crispy'><input id='crispy' value='crispy' type='radio' name='standard'>Crispy</label> <br>
-                <label for='almond'><input id='almond' value='almond' type='radio' name='standard'>Almond</label> <br>
-                <label for='darkchoc'><input id='darkchoc' value='darkchoc' type='radio' name='standard'>Dark Chocolate</label> <br>
-                <label for='coffeenut'><input id='coffeenut' value='coffeenut' type='radio' name='standard'>Coffee Nut</label> <br>
-                <label for='mintdark'><input id='mintdark' value='mintdark' type='radio' name='standard'>Mint Dark Chocolate</label> <br>
-                <label for='sweetsalty'><input id='sweetsalty' value='sweetsalty' type='radio' name='standard'>Sweet and Salty Milk Chocolate</label> <br>
-                <label for='sspeanut'><input id='sspeanut' value='sspeanut' type='radio' name='standard'>Sweet and Salty Peanut</label> <br>
-                <label for='whitechoc'><input id='whitechoc' value='whitechoc' type='radio' name='standard'>White Chocolate Peanut</label> <br>
+                <table>
+                    <tr>
+                        <td>
+                            <label for='plain'><input id='plain' value='plain' type='radio' name='standard'>Milk Chocolate (Plain)</label> <br>
+                            <label for='peanut'><input id='peanut' value='peanut' type='radio' name='standard'>Peanut</label> <br>
+                            <label for='peanutbutter'><input id='peanutbutter' value='peanutbutter' type='radio' name='standard'>Peanut Butter</label> <br>
+                            <label for='pretzel'><input id='pretzel' value='pretzel' type='radio' name='standard'>Pretzel</label> <br>
+                            <label for='caramel'><input id='caramel' value='caramel' type='radio' name='standard'>Caramel</label> <br>
+                            <label for='crispy'><input id='crispy' value='crispy' type='radio' name='standard'>Crispy</label> <br>
+                            <label for='almond'><input id='almond' value='almond' type='radio' name='standard'>Almond</label> <br>
+                        </td>
+                        <td class="right-column">
+                            <label for='darkchoc'><input id='darkchoc' value='darkchoc' type='radio' name='standard'>Dark Chocolate</label> <br>
+                            <label for='coffeenut'><input id='coffeenut' value='coffeenut' type='radio' name='standard'>Coffee Nut</label> <br>
+                            <label for='mintdark'><input id='mintdark' value='mintdark' type='radio' name='standard'>Mint Dark Chocolate</label> <br>
+                            <label for='sweetsalty'><input id='sweetsalty' value='sweetsalty' type='radio' name='standard'>Sweet and Salty Milk Chocolate</label> <br>
+                            <label for='sspeanut'><input id='sspeanut' value='sspeanut' type='radio' name='standard'>Sweet and Salty Peanut</label> <br>
+                            <label for='whitechoc'><input id='whitechoc' value='whitechoc' type='radio' name='standard'>White Chocolate Peanut</label> 
+                        </td>
+                    </tr>
+                </table>
+                <br>
 
                 <p>Which of the following seasonal and designer flavors interest you?  (Check all that interest you.)</p>
-                <label for='engtoffee'><input id='engtoffee' value='engtoffee' type='checkbox' name='designer'>English Toffee Peanut</label> <br>
-                <label for='fudgebrownie'><input id='fudgebrownie' value='fudgebrownie' type='checkbox' name='designer'>Fudge Brownie</label> <br>
-                <label for='chocpopcorn'><input id='chocpopcorn' value='chocpopcorn' type='checkbox' name='designer'>Chocolate Popcorn</label> <br>
-                <label for='sugarcookie'><input id='sugarcookie' value='sugarcookie' type='checkbox' name='designer'>Sugar Cookie</label> <br>
-                <label for='cocoacrisp'><input id='cocoacrisp' value='cocoacrisp' type='checkbox' name='designer'>Creepy Cocoa Crisp</label> <br>
-                <label for='orangecream'><input id='orangecream' value='orangecream' type='checkbox' name='designer'>Orange Vanilla Cream</label> <br>
-                <label for='whitecheese'><input id='whitecheese' value='whitecheese' type='checkbox' name='designer'>White Cheesecake</label> <br>
-                <label for='pumpkinpie'><input id='pumpkinpie' value='pumpkinpie' type='checkbox' name='designer'>White Pumpkin Pie</label> <br>
-                <label for='candycorn'><input id='candycorn' value='candycorn' type='checkbox' name='designer'>White Candy Corn</label> <br>
-                <label for='hazelnut'><input id='hazelnut' value='hazelnut' type='checkbox' name='designer'>Hazelnut Spread</label> <br>
+                <table>
+                    <tr>
+                        <td>
+                            <label for='engtoffee'><input id='engtoffee' value='engtoffee' type='checkbox' name='designer'>English Toffee Peanut</label> <br>
+                            <label for='fudgebrownie'><input id='fudgebrownie' value='fudgebrownie' type='checkbox' name='designer'>Fudge Brownie</label> <br>
+                            <label for='chocpopcorn'><input id='chocpopcorn' value='chocpopcorn' type='checkbox' name='designer'>Chocolate Popcorn</label> <br>
+                            <label for='sugarcookie'><input id='sugarcookie' value='sugarcookie' type='checkbox' name='designer'>Sugar Cookie</label> <br>
+                            <label for='cocoacrisp'><input id='cocoacrisp' value='cocoacrisp' type='checkbox' name='designer'>Creepy Cocoa Crisp</label> <br>
+                        </td>
+                        <td class="right-column">
+                            <label for='orangecream'><input id='orangecream' value='orangecream' type='checkbox' name='designer'>Orange Vanilla Cream</label> <br>
+                            <label for='whitecheese'><input id='whitecheese' value='whitecheese' type='checkbox' name='designer'>White Cheesecake</label> <br>
+                            <label for='pumpkinpie'><input id='pumpkinpie' value='pumpkinpie' type='checkbox' name='designer'>White Pumpkin Pie</label> <br>
+                            <label for='candycorn'><input id='candycorn' value='candycorn' type='checkbox' name='designer'>White Candy Corn</label> <br>
+                            <label for='hazelnut'><input id='hazelnut' value='hazelnut' type='checkbox' name='designer'>Hazelnut Spread</label>
+                        </td>
+                    </tr>
+                </table>
+                 <br>
                 <br>
                 <label for='comments'>Are there other flavors that might interest you?  Please enter them or any additional comments below:</label><br>
                 <textarea id='comments' name='comments' rows=5 columns=80></textarea>
