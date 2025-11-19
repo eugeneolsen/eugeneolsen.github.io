@@ -103,6 +103,7 @@ footer {
 #output {
     margin: 0 auto;
     margin-top: 3em;
+    margin-bottom: 2em;
     max-width: var(--max-width);
 }
 
