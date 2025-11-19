@@ -1,0 +1,204 @@
+:root {
+    --max-width: 640px;
+    --border-radius: 0.3em;
+    --xparent-blue: rgba(195, 235, 248, 0.25);
+}
+
+* {
+    font-family: 'Yellowtail', cursive;
+}
+
+html {
+    /*max-width: var(--max-width);*/
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 3.0vw;
+    }
+}
+
+
+body {
+    /* background-image: url('./augustine-wong-li0iC0rjvvg-unsplash.jpg');  */
+    background-image: url('./images/elegant-white-marble.png');  
+}
+
+
+h1 {
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+    color:rgb(64, 64, 64)
+}
+
+div.row {
+    display: table-row;
+}
+
+label, button, th, input[type='submit'] {
+    font-family: 'Yellowtail', cursive;
+}
+
+label, input, button {
+    font-size: 1.5em;
+}
+
+
+label {
+    display: table-cell;
+    text-align: right;
+}
+
+input[type='text'] {
+    width: 100%;
+    display: table-cell;
+}
+
+input[type='text'], input[type='number'] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    border-radius: var(--border-radius);
+    padding-left: 0.2em;
+}
+
+input[type='text']:hover, input[type='number']:hover {
+    background-color: var(--xparent-blue);
+}
+
+input[type='submit'] {
+    width: 4em;
+    margin-right: 0.25em;
+    border-radius: var(--border-radius);
+}
+
+button {
+    border-radius: var(--border-radius);
+}
+
+input[type='submit']:hover, button:hover {
+    background-color: var(--xparent-blue);
+}
+
+thead:first-child {
+    text-align: left;
+}
+
+select {
+    font-size: .9em;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 100%;
+    /* max-width: var(--max-width); */
+    text-align: center;
+}
+
+#output {
+    margin: 0 auto;
+    margin-top: 3em;
+    max-width: var(--max-width);
+}
+
+
+#results tr:nth-child(even) {
+    background-color: var(--xparent-blue);
+}
+
+#results th {
+    color: rgb(80, 80, 80);
+    background-color: rgba(195, 235, 248, 0.377);
+}
+
+#results th, td {
+    font-size: 1.5em;
+}
+
+#results th:last-of-type {
+    width: auto;
+    text-align: center;
+}
+
+#results td, #results td em {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#results td:first-of-type{
+    padding-right: 1em;
+}
+
+#results td:last-of-type {
+    text-align: center;
+}
+
+.small {
+    font-size: .7em;
+}
+
+.hidden {
+    display: none;
+}
+
+#inputForm {
+    max-width: var(--max-width);;
+    margin: 0 auto;
+    margin-top: 1.5em;
+} 
+
+#inputForm > table {
+    font-family: 'Yellowtail', cursive;
+}
+
+#inputForm td {
+    vertical-align: middle;
+}
+
+#inputForm tr td:first-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+#inputForm tr td:last-child {
+    width: 5em;
+    padding-left: 0.7em;
+    padding-right: 0.8em;
+}
+
+#syllables {
+    width: 1.7em;
+}
+
+#trailer {
+    font-family: 'Yellowtail', cursive;
+}
+
+#less {
+    margin-left: 0em;
+}
+
+#errors {
+    text-align: center;
+    color: darkred;
+    font-size: 1.5em;
+}
+
+#info {
+    font-size: 1.25em;
+    padding-left: 0.4em;
+}
+
+#buttons {
+    display: block;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+#api {
+    font-variant-caps: small-caps;
+    font-weight: 600;
+}

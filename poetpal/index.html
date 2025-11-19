@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
+    <title>Poet's Pal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Satisfy&family=Yellowtail&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Poet's Pal</h1>
+    </header>
+
+    <section id="input">
+        <form id="inputForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Rhymes with
+                        </td>
+                        <td>
+                            <input id="rhyme" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Starts with
+                        </td>
+                        <td>
+                            <input id="starts" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="synant" id="synant">
+                                <option value="synonym">Synonyms</option>
+                                <option value="antonym">Antonyms</option>
+                            </select>
+                            of
+                        </td>
+                        <td>
+                            <input id="synonym" type="text" />
+                        </td>
+                    </tr>
+                    <tr id="syllableRow">
+                        <td>
+                            <span class="small">and&nbsp;</span>
+                            <select name="nSyl" id="nSyl">
+                                <option value="less">less than</option>
+                                <option value="exact">exactly</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input id="syllables" type="number" min="2" max="20" />
+                            <span id="trailer">syllables</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="buttons">
+                <input id="submit" type="submit">
+                <button id="clear" type="button">Clear</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="output">
+        <div id="errors" class="hidden">
+        </div>
+        <div id="info" class="hidden">
+        </div>
+
+        <table id="results">
+            <thead id="thead">
+
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <div id="credits">
+            Search results provided by the <a href="https://www.datamuse.com/api/" target="_blank">Datamuse 
+                <span id="api">api</span></a><br>
+            <a href="https://github.com/zacanger/profane-words#readme" target="_blank">Profane Words list</a>
+            for filter courtesy Zac Anger.
+        </div>
+        <div id="copyright">
+            &copy; 2025 Eugene C. Olsen
+        </div>
+    </footer>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
