@@ -22,8 +22,9 @@ html {
 
 
 body {
-    /* background-image: url('./augustine-wong-li0iC0rjvvg-unsplash.jpg');  */
-    background-image: url('./images/elegant-white-marble.png');  
+    background-image: url('./images/elegant-white-marble.png'); 
+    margin-left: 0; 
+    margin-bottom: 0;
 }
 
 
@@ -93,7 +94,7 @@ footer {
     position: fixed;
     bottom: 0;
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0;
     width: 100%;
     /* max-width: var(--max-width); */
     text-align: center;
@@ -201,4 +202,17 @@ footer {
 #api {
     font-variant-caps: small-caps;
     font-weight: 600;
+}
+
+#copyright {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    background-color: rgba(32, 32, 32, 0.7);
+    color: #f0f0f0;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: .25em;
+    padding-bottom: .33em;
+    padding-left: 0;;
 }
