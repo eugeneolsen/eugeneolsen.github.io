@@ -8,11 +8,15 @@ const view = new View();
 view.disableSyllables();
 document.getElementById("rhyme").focus();
 
+// Event listeners
+// ---------------
+
+// Input form submission
 document.getElementById("inputForm").addEventListener("submit", async (event) => {
     event.preventDefault()
 
-    let perfect = [];
-    let imperfect = [];
+    let perfect = [];   // Array of perfect rhymes
+    let imperfect = []; // Array of imperfect rhymes
 
     try {
         [perfect, imperfect] = await getWordList();
