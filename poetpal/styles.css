@@ -131,12 +131,17 @@ footer {
 }
 
 #results td:first-of-type{
-    padding-right: 1em;
+    padding-right: 2em;
 }
 
-#results td:last-of-type {
+#results tr td:nth-child(2) {
+    text-align: right;
+}
+
+#results tr td:nth-child(3) {
     text-align: center;
 }
+
 
 .small {
     font-size: .7em;
@@ -144,6 +149,14 @@ footer {
 
 .hidden {
     display: none;
+}
+
+.copy-btn {
+    font-size: 0.8em;
+    margin-left: 0;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 #inputForm {

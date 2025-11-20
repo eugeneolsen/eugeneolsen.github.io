@@ -13,7 +13,7 @@ export default class View {
         // Create table header
         this.createTableHeader(perfect[0]);
 
-        // Redner the word lists
+        // Render the word lists
         this._renderList(perfect, true);
         this._renderList(imperfect, false);
 
@@ -62,6 +62,43 @@ export default class View {
                     cell.innerText = value;
                 }
             }
+            // Add a copy button to each row with a copy icon as its text.
+            // This button would copy the word in the row's first td element to the clipboard.
+            let btnCell = document.createElement("td");
+            row.appendChild(btnCell);
+
+            let btn = document.createElement("button");
+            btn.type = "button";
+            btn.setAttribute("aria-label", "Copy word");
+            btn.title = "Copy word";
+            btn.className = "copy-btn";
+            btn.innerText = "📋";
+            btnCell.appendChild(btn);
+
+            btn.addEventListener("click", async (e) => {
+                e.stopPropagation();
+                const word = row.cells[0].innerText.trim();
+
+                try {
+                    await navigator.clipboard.writeText(word);
+                    btn.innerText = "✅";
+                    setTimeout(() => btn.innerText = "📋", 2000);
+                } catch {
+                    // Fallback for older browsers
+                    const ta = document.createElement("textarea");
+                    ta.value = word;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    try {
+                        document.execCommand("copy");
+                        btn.innerText = "✅";
+                    } catch {
+                        btn.innerText = "❌";
+                    }
+                    document.body.removeChild(ta);
+                    setTimeout(() => btn.innerText = "📋", 2000);
+                }
+            });
         }
     }
 
