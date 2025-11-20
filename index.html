@@ -6,7 +6,40 @@
 
         <style>
             body {
+                text-align: left;
+                margin-left: 0;
+            }
+            h1 {
                 text-align: center;
+            }
+            main {
+                margin-left: 5%;
+            }
+            footer {
+                position: fixed;
+                bottom: 0;
+                padding-top: 0.5em;
+                padding-bottom: 0;
+                width: 100%;
+                text-align: center;
+            }
+            .item-links {
+                font-size: 2em;
+            }
+            .item-links a {
+                font-size: 0.75em;
+            }
+            #copyright {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 0.8em;
+                background-color: rgba(32, 40, 64, 0.7);
+                color: #f0f0f0;
+                margin-top: 0.5em;
+                margin-bottom: 0;
+                margin-left: 0;
+                padding-top: .25em;
+                padding-bottom: .33em;
+                padding-left: 0;;
             }
         </style>
 
@@ -23,7 +56,26 @@
 
 
     <body>
-        <h1>Home of Eugene Olsen's GitHub Pages</h1>
-        <p>Subfolders contain the projects.</p>
+        <header>
+            <h1>Home of Eugene Olsen's GitHub Pages</h1>
+        </header>
+        <main>
+            <p>
+                Welcome to my collection of static web pages hosted on GitHub Pages. 
+            </p>
+            <p>
+                Explore my projects and find useful tools.
+            </p>
+        <p class="item-links">
+            Poet's Pal&trade; &nbsp;
+            <a href="https://github.com/eugeneolsen/eugeneolsen.github.io/blob/master/poetpal/README.md">documentation</a> | 
+            <a href="poetpal/index.html" target="_blank">app</a>
+        </p>
+        </main>
+        <footer>
+            <div id="copyright">
+                &copy; 2025 Eugene C. Olsen
+            </div>
+        </footer>
     </body>
 </html>
