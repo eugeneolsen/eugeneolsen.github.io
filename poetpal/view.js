@@ -41,8 +41,7 @@ export default class View {
 
     _isProfane(word) {
         const b64 = btoa(word);
-        // If you use this a lot, consider Set(offensive) instead of array
-        return offensive.includes(b64);
+        return offensive.has(b64);
     }
 
     _passesSyllableFilter(itemSyllables, requested, mode) {
@@ -115,7 +114,7 @@ export default class View {
 
         if (await this._tryClipboardApi(word, btn)) return;
 
-        this._fallbackCopy(word, btn);
+        this._fallbackCopy(word, btn);  // May work better with older browsers
     }
 
     async _tryClipboardApi(text, btn) {
@@ -153,6 +152,7 @@ export default class View {
         setTimeout(() => { btn.innerText = "📋"; }, 2000);
     }
 
+    /* ========== UI HELPERS ========== */
 
     enableSyllables() {
         document.getElementById("nSyl").disabled = false;
