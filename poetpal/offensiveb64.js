@@ -1,5 +1,4 @@
-export const offensive = 
-[
+export const offensive = new Set([
   "MiBnaXJscyAxIGN1cA==",
   "MmcxYw==",
   "NHI1ZQ==",
@@ -2863,4 +2862,4 @@ export const offensive =
   "em9vcGhpbGU=",
   "em9vcGhpbGlh",
   "8J+WlQ=="
-];
+]);
