@@ -21,85 +21,136 @@ export default class View {
     }
 
 
-    _renderList(list, isPerfect) {      // Private 
-        let body = document.getElementById("tbody");
+    _renderList(list, isPerfect) {
+        const body = document.getElementById("tbody");
+        const nSyllables = this.getNumberOfSyllables();
+        const nSylValue = this.getSyllableComparison();
 
-        let nSyllables = this.getNumberOfSyllables();
-        let nSylValue = this.getSyllableComparison();
+        const filtered = list
+            .filter(item => !this._isProfane(item.word))
+            .filter(item => this._passesSyllableFilter(item.numSyllables, nSyllables, nSylValue));
 
-        for (let item of list) {
-            // Check for profane and offensive words
-            let b64 = btoa(item.word);
-            let profane = offensive.some(element => element === b64);
-            if (profane) { continue; }  // Skip profane and offensive words
-
-            // Filter out rows that don't match the number of syllables requested
-            if (nSyllables > 0 && nSylValue === "exactly") {
-                if (item.numSyllables !== nSyllables) {
-                    continue;   // skip rows that don't exactly match number of syllables specified
-                }
-            } else {
-                if (nSyllables > 0 && item.numSyllables >= nSyllables) {
-                    continue;   // Skip rows that have more syllables than requested
-                }
-            }
-
-            // 
-            let row = document.createElement("tr");
+        for (const item of filtered) {
+            const row = this._createRow(item, isPerfect);
             body.appendChild(row);
-
-            let first = true;
-            for (let value of Object.values(item)) {
-                let cell = document.createElement("td");
-                row.appendChild(cell);
-
-                if (first && !isPerfect) {
-                    let em = document.createElement("em");
-                    cell.appendChild(em);
-                    em.innerText = value;
-                    first = false;
-                } else {
-                    cell.innerText = value;
-                }
-            }
-            // Add a copy button to each row with a copy icon as its text.
-            // This button would copy the word in the row's first td element to the clipboard.
-            let btnCell = document.createElement("td");
-            row.appendChild(btnCell);
-
-            let btn = document.createElement("button");
-            btn.type = "button";
-            btn.setAttribute("aria-label", "Copy word");
-            btn.title = "Copy word";
-            btn.className = "copy-btn";
-            btn.innerText = "📋";
-            btnCell.appendChild(btn);
-
-            btn.addEventListener("click", async (e) => {
-                e.stopPropagation();
-                const word = row.cells[0].innerText.trim();
-
-                try {
-                    await navigator.clipboard.writeText(word);
-                    btn.innerText = "✅";
-                    setTimeout(() => btn.innerText = "📋", 2000);
-                } catch {
-                    // Fallback for older browsers
-                    const ta = document.createElement("textarea");
-                    ta.value = word;
-                    document.body.appendChild(ta);
-                    ta.select();
-                    try {
-                        document.execCommand("copy");
-                        btn.innerText = "✅";
-                    } catch {
-                        btn.innerText = "❌";
-                    }
-                    document.body.removeChild(ta);
-                    setTimeout(() => btn.innerText = "📋", 2000);
-                }
-            });
+            this._appendCopyButtonCell(row);
         }
+    }
+
+    /* ========== FILTERING HELPERS ========== */
+
+    _isProfane(word) {
+        const b64 = btoa(word);
+        // If you use this a lot, consider Set(offensive) instead of array
+        return offensive.includes(b64);
+    }
+
+    _passesSyllableFilter(itemSyllables, requested, mode) {
+        if (requested <= 0) return true;
+
+        if (mode === "exactly") {
+            return itemSyllables === requested;
+        }
+
+        // default: "up to" (skip rows with more syllables than requested)
+        return itemSyllables < requested;
+    }
+
+    /* ========== ROW / CELL CREATION ========== */
+
+    _createRow(item, isPerfect) {
+        const row = document.createElement("tr");
+
+        const values = Object.values(item);
+        values.forEach((value, index) => {
+            const cell = this._createDataCell(value, index === 0 && !isPerfect);
+            row.appendChild(cell);
+        });
+
+        return row;
+    }
+
+    _createDataCell(value, emphasize) {
+        const cell = document.createElement("td");
+
+        if (emphasize) {
+            const em = document.createElement("em");
+            em.innerText = value;
+            cell.appendChild(em);
+        } else {
+            cell.innerText = value;
+        }
+
+        return cell;
+    }
+
+    /* ========== COPY BUTTON ========== */
+
+    _appendCopyButtonCell(row) {
+        const btnCell = document.createElement("td");
+        const btn = this._createCopyButton(row);
+
+        btnCell.appendChild(btn);
+        row.appendChild(btnCell);
+    }
+
+    _createCopyButton(row) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", "Copy word");
+        btn.title = "Copy word";
+        btn.className = "copy-btn";
+        btn.innerText = "📋";
+
+        btn.addEventListener("click", (e) =>
+            this._handleCopyClick(e, row, btn)
+        );
+
+        return btn;
+    }
+
+    async _handleCopyClick(event, row, btn) {
+        event.stopPropagation();
+        const word = row.cells[0].innerText.trim();
+
+        if (await this._tryClipboardApi(word, btn)) return;
+
+        this._fallbackCopy(word, btn);
+    }
+
+    async _tryClipboardApi(text, btn) {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) {
+            return false;
+        }
+
+        try {
+            await navigator.clipboard.writeText(text);
+            this._showCopyResult(btn, true);
+            return true;
+        } catch {
+            return false;
+        }
+    }
+
+    _fallbackCopy(text, btn) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+
+        try {
+            const success = document.execCommand("copy");
+            this._showCopyResult(btn, success);
+        } catch {
+            this._showCopyResult(btn, false);
+        } finally {
+            document.body.removeChild(ta);
+        }
+    }
+
+    _showCopyResult(btn, success) {
+        btn.innerText = success ? "✅" : "❌";
+        setTimeout(() => { btn.innerText = "📋"; }, 2000);
     }
 
 
