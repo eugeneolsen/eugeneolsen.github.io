@@ -2,13 +2,12 @@
 
 import { offensive } from './offensiveb64.js';
 
+const scoreTitle = "Score indicates how closely the rhyme matches the target word.  The higher the score, the closer the match.";
+
 export default class View {
     renderList(perfect, imperfect) {
         let body = document.getElementById("tbody");
         body.innerHTML = "";
-
-
-        document.getElementById("credits").classList.add("hidden");
 
         // Create table header
         this.createTableHeader(perfect[0]);
@@ -177,6 +176,9 @@ export default class View {
                 th.innerText = "Syllables";
             } else {
                 th.innerText = key.charAt(0).toUpperCase() + key.slice(1);
+                if (key === "score") {
+                    th.title = scoreTitle
+                }
             }
             thead.appendChild(th);
         }
@@ -250,8 +252,6 @@ export default class View {
         document.getElementById("syllables").value = "";
 
         this.disableSyllables();
-
-        document.getElementById("credits").classList.remove("hidden");
 
         rhyme.focus();
     }
