@@ -9,3 +9,9 @@
 - Svelte, TypeScript, Tailwind: Planned  
 ---
 Search results are provided by the [Datamuse API](https://www.datamuse.com/api/)  
+[Profane Words list](https://github.com/zacanger/profane-words#readme) for filter courtesy Zac Anger.
+## Description
+## Features
+## Usage
+### Input
+### Output
