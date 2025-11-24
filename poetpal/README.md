@@ -37,7 +37,7 @@ This combination of filters will yield one result: "drink"
 The filters accumulate with a logical "and," in other words, the above scenario behaves like:  
 Rhymes with "think" *and* Starts with "d" *and* is a Synonym of "beverage".  
 
-If you are writing a poem and want to maintain rhythm, you may want a limited or exact number of syllables.  You can use the "less than/exactly" ( ) "Syllables" field to limit the words in the output list to words of that many syllables.
+If you are writing a poem and want to maintain rhythm, you may want a limited or exact number of syllables.  You can use the "exactly/less than" ( ) "Syllables" field to limit the words in the output list to words of that many syllables.
 
 ### Output
 The output is organized into a table with three columns: Word, Score, and Syllables.  
