@@ -11,7 +11,9 @@
 Search results are provided by the [Datamuse API](https://www.datamuse.com/api/)  
 [Profane Words list](https://github.com/zacanger/profane-words#readme) for filter courtesy Zac Anger.
 ## Description
-The Poet's Pal application is a combined rhyming dictionary and thesaurus, powered by artificial intelligence (AI). The rhyming dictionary and thesaurus can be combined or used independently.  Results can further be filtered by number of syllables and how the word begins.  The latter can aid in alliteration and initial assonance, if desired.
+The Poet's Pal application is a combined rhyming dictionary and thesaurus, powered by artificial intelligence (AI). The rhyming dictionary and thesaurus can be combined or used independently.  Results can further be filtered by number of syllables and how the word begins.  The latter can aid in alliteration and assonance, if desired.  
+
+The Poet's Pal is used from grade school to grad school and by professional writers.
 ## Features
 - Rhyming Dictionary
 - Thesaurus
@@ -21,6 +23,8 @@ The Poet's Pal application is a combined rhyming dictionary and thesaurus, power
   - Number of syllables
 - One-click copying of results
 - Score indicating how well each result word rhymes
+- Powerful enough for graduate students and professional writers
+- Simple user interface with profanity filter makes it family-friendly and kid-friendly
 
 ## Usage
 ### Input
@@ -35,7 +39,7 @@ Synonym of "beverage"
 This combination of filters will yield one result: "drink"  
 
 The filters accumulate with a logical "and," in other words, the above scenario behaves like:  
-Rhymes with "think" *and* Starts with "d" *and* is a Synonym of "beverage".  
+Rhymes with "think" *and* Starts with "d" *and* is a Synonym of "beverage" *and* exactly 1 syllable.  
 
 If you are writing a poem and want to maintain rhythm, you may want a limited or exact number of syllables.  You can use the "exactly/less than" ( ) "Syllables" field to limit the words in the output list to words of that many syllables.
 
@@ -44,7 +48,7 @@ The output is organized into a table with three columns: Word, Score, and Syllab
 
 The Word column contains a word that rhymes with, or nearly rhymes with the word you entered in the "Rhymes with" field.  Near rhymes, if there are any, are indicated by *italicized* words.
 
-The Score column indicates how well the word rhymes with the original word.  Higher numbers are considered to be better rhymes.   The table is sorted by the Score, with the higher scoring words being at the top.  
+The Score column indicates how well the word rhymes with the original word.  Higher numbers are considered to be better rhymes.   The table is sorted by the Score, with the higher scoring words being at the top.  The score has no interpretable meaning other than a way to compare and rank results.
 
 The Syllables column tells how many syllables are in the rhyming word.  
 
