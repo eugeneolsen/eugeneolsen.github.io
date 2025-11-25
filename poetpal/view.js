@@ -59,7 +59,17 @@ export default class View {
     _createRow(item, isPerfect) {
         const row = document.createElement("tr");
 
-        const values = Object.values(item);
+        // Ensure score field exists
+        let itemWithScore = {};
+        if (item.hasOwnProperty("score")) {
+            itemWithScore = item;
+        } else {
+            const entries = Object.entries(item);
+            entries.splice(1, 0, ["score", ""]);    // Insert empty score after word
+            itemWithScore = Object.fromEntries(entries);
+        }
+
+        const values = Object.values(itemWithScore);
         values.forEach((value, index) => {
             const cell = this._createDataCell(value, index === 0 && !isPerfect);
             row.appendChild(cell);
