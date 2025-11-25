@@ -143,12 +143,19 @@ footer {
     padding-right: 2em;
 }
 
+#results tr td:nth-child(1) {
+    text-align: left;
+    width: 19.5rem;
+}
+
 #results tr td:nth-child(2) {
     text-align: right;
+    width: 3.5rem
 }
 
 #results tr td:nth-child(3) {
     text-align: center;
+    width: 5rem;
 }
 
 
