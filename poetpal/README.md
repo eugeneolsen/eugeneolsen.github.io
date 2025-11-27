@@ -3,7 +3,7 @@
 ## Mobile first, responsive, powered by AI  
 ![Poet's Pal UI](images/poet_pal_med.png "Poet's Pal")
 ### Variations using different tools and frameworks:
-- Vanilla HTML, JavaScript, CSS: [Try the app!](https://eugeneolsen.github.io/poetpal)  
+- Vanilla: ![HTML Badge](https://img.shields.io/badge/HTML-5E5E5E?style=flat&logo=html5&logoColor=white) ![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) ![CSS Badge](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white) &nbsp; [Try the app!](https://eugeneolsen.github.io/poetpal)  
 - Next.js, TypeScript, Tailwind: Under development  
 - Vue.js, TypeScript, SCSS: Planned  
 - Svelte, TypeScript, Tailwind: Planned  
