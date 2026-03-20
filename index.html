@@ -33,9 +33,38 @@
                 text-align: center;
             }
             main {
-                margin-left: 5%;
+                display: flex;
+                gap: 2em;
+                margin: 0 5%;
                 position: relative;
                 z-index: 1; /* Ensures main content is above the background */
+            }
+            #showcase {
+                flex: 1;
+            }
+            #profile {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #portrait {
+                width: 100%;
+                max-width: 600px;
+                margin-top: -2rem;
+            }
+            #bio {
+                margin-top: 0.5em;
+                padding: 1.25em 1.5em;
+                background-color: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(6px);
+                border-left: 3px solid rgba(173, 216, 230, 0.7);
+                border-radius: 4px;
+                font-family: Georgia, 'Times New Roman', serif;
+                font-size: 1.2em;
+                line-height: 1.4;
+                color: #000010; /*#f0f4f8;*/
+                text-shadow: 0 1px 3px rgba(0, 0, 32, 0.6);
             }
             footer {
                 position: fixed;
@@ -79,20 +108,31 @@
 
     <body>
         <header>
-            <h1>Eugene Olsen's Project Pages</h1>
+            <h1>Eugene C. Olsen</h1>
         </header>
         <main>
-            <p>
-                Welcome to my collection of static web pages hosted on GitHub Pages. 
-            </p>
-            <p>
-                Explore my projects and find useful tools.
-            </p>
-        <p class="item-links">
-            Poet's Pal&trade; &nbsp;
-            <a href="https://github.com/eugeneolsen/eugeneolsen.github.io/blob/master/poetpal/README.md">documentation</a> | 
-            <a href="poetpal/index.html" target="_blank">app</a>
-        </p>
+            <section id="showcase">
+                <h2>Project Showcase</h2>
+                <p class="item-links">
+                    Poet's Pal&trade; &nbsp;
+                    <a href="https://github.com/eugeneolsen/eugeneolsen.github.io/blob/master/poetpal/README.md">documentation</a> |
+                    <a href="poetpal/index.html" target="_blank">app</a>
+                </p>
+            </section>
+            <section id="profile">
+                <img id="portrait" src="./images/eugene.png" alt="Portrait of Eugene C. Olsen">
+                <div id="bio">
+                    <p>
+                        AI native business analyst and software architect who has spent most of his career solving problems with code. 
+                        A results-oriented hands-on manager, and product owner with a solid technical and business background and a 
+                        consistent track record of delivering high quality projects and products early and within budget.
+                    </p>
+                    <p>
+                        Recognized for building energetic teams that generate a high volume of quality solutions as well as 
+                        a strong sense of commitment and teamwork among staff. Eugene loves to solve problems.
+                    </p>
+                </div>
+            </section>
         </main>
         <footer>
             <div id="copyright">
