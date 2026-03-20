@@ -6,17 +6,36 @@
 
         <style>
             body {
-                background-image: url('./fresh_snow.webp'); 
-                /*background-size: 100% 100%;*/
+                background-image: linear-gradient(60deg, lightblue, #000020);
                 text-align: left;
-                margin-left: 0;
                 color: black;
+                height: 100vh;
+                position:relative;
+                margin: 0; 
+                padding: 0;
             }
+
+            body::before {
+                content: "";
+                position: fixed; /* Covers the whole screen even when scrolling */
+                inset: 0;        /* Shorthand for top, right, bottom, left: 0 */
+                z-index: -1;     /* Puts it behind text but stays above body background */
+                
+                /* The tiled pattern layer */
+                background-image: url('./images/fresh_snow.webp');
+                background-repeat: repeat;
+                
+                /* 20% Alpha Channel effect */
+                opacity: 0.2; 
+            }
+
             h1 {
                 text-align: center;
             }
             main {
                 margin-left: 5%;
+                position: relative;
+                z-index: 1; /* Ensures main content is above the background */
             }
             footer {
                 position: fixed;
